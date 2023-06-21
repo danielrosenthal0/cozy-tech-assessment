@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "cozy-test",
+    "slug": "cozy-test",
+    "scheme": "cozy-test",
+    "web": {
+        "bundler": "metro"
+    }
+  }
+}
