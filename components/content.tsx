@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 
 const Content : FC = (props) => {
     const {content} = props;
+    //truncating to 100 characters
     const truncated = content.length > 100 ? content.substring(0, 100) + '...' : content;
     return (
         <View style={styles.content}>

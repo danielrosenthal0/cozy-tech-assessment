@@ -11,6 +11,7 @@ const MainPage: FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 5;
 
+  //individual http requests, could probably have made useHttp hook
   useEffect(() => {
     fetch("http://localhost:3000/posts")
       .then((response) => response.json())
@@ -32,6 +33,7 @@ const MainPage: FC = () => {
       .catch((error) => console.error(error));
   }, []);
 
+  //keeping track of pages for pagination
   const indexLast = currentPage * postsPerPage;
   const indexFirst = indexLast - postsPerPage;
   const currPosts = posts.slice(indexFirst, indexLast);
@@ -40,9 +42,12 @@ const MainPage: FC = () => {
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
   };
+
+  //linking the three data sets
   return (
     <View style={styles.content}>
         <h1>Recent posts</h1>
+        
       {currPosts.map((post) => {
         const user = users.find((user) => user.id === post.userId);
         const postLikes = likes.filter((like) => like.postId === post.id);

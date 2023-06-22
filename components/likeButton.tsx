@@ -5,6 +5,7 @@ const LikeButton = () => {
   const [isLiked, setIsLiked] = useState(false);
   const [likeCount, setLikeCount] = useState(Math.floor(Math.random() * 100));
 
+  //handling like and unlike function
   const handleLike = () => {
     if (isLiked) {
       setLikeCount((prevCount) => prevCount - 1);

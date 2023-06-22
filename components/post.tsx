@@ -8,6 +8,7 @@ import LikeButton from "./likeButton";
 const Post: FC = (props) => {
   const { title, content, user, likes, postId } = props;
 
+//chronological time posted
   const getPostedTime = (postId) => {
     const currentTime = new Date();
     const randomMinutes = postId * 10; 

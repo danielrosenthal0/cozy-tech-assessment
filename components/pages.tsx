@@ -5,11 +5,13 @@ const Pages = ({ totalPages, onPageChange, currentPage }) => {
   const pagesDisplayed = 5;
   const pageButtons = [];
 
+  //keeping track of which 5 pages are displayed at bottom, current page always in center, range doesnt exceed max
   let start = Math.max(currentPage - Math.floor(pagesDisplayed / 2), 1);
   let end = Math.min(start + pagesDisplayed - 1, totalPages);
 
   start = Math.max(end - pagesDisplayed + 1, 1);
 
+  //generating button for each page, on press calls onpagechange which just changes the current page and renders the right posts
   for (let page = start; page <= end; page++) {
     pageButtons.push(
       <Button
@@ -21,6 +23,7 @@ const Pages = ({ totalPages, onPageChange, currentPage }) => {
     );
   }
 
+  //left/right buttons disabled when current is 1 or max
   return (
     <View style={styles.container}>
       <Button
