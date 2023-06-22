@@ -1,11 +1,10 @@
 import React from "react";
-
+import { View, StyleSheet, Button } from "react-native";
 
 const Pages = ({ totalPages, onPageChange, currentPage }) => {
   const pagesDisplayed = 5;
   const pageButtons = [];
 
-  //range
   let start = Math.max(currentPage - Math.floor(pagesDisplayed / 2), 1);
   let end = Math.min(start + pagesDisplayed - 1, totalPages);
 
@@ -13,34 +12,47 @@ const Pages = ({ totalPages, onPageChange, currentPage }) => {
 
   for (let page = start; page <= end; page++) {
     pageButtons.push(
-      <button
+      <Button
         key={page}
-        onClick={() => onPageChange(page)}
-        className={currentPage === page ? "active" : ""}
-      >
-        {page}
-      </button>
+        onPress={() => onPageChange(page)}
+        color={currentPage === page ? styles.activeButton.color : styles.button.color}
+        title={page.toString()}
+      />
     );
   }
 
   return (
-    <div>
-      <button
-        onClick={() => onPageChange(Math.max(currentPage - 1, 1))}
+    <View style={styles.container}>
+      <Button
+        onPress={() => onPageChange(Math.max(currentPage - 1, 1))}
         disabled={currentPage === 1}
-      >
-        &lt;
-      </button>
+        title="&lt;"
+        color={styles.button.color}
+      />
       {pageButtons}
-      <button
-        onClick={() => onPageChange(Math.min(currentPage + 1, totalPages))}
+      <Button
+        onPress={() => onPageChange(Math.min(currentPage + 1, totalPages))}
         disabled={currentPage === totalPages}
-      >
-        &gt;
-      </button>
-    </div>
+        title="&gt;"
+        color={styles.button.color}
+      />
+    </View>
   );
 };
 
-export default Pages;
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 10,
+  },
+  button: {
+    color: "#000000",
+  },
+  activeButton: {
+    color: "#ff0000",
+  },
+});
 
+export default Pages;

@@ -6,7 +6,7 @@ const Author : FC = (props) => {
     const {user} = props;
     return (
         <View>
-            <p>{user.name}</p>
+            <Text>{user.name}</Text>
             <AuthorAvatar avatar={user.avatar}></AuthorAvatar>
         </View>
         

@@ -13,9 +13,9 @@ const Post: FC = (props) => {
       <Title title={title} />
       <Content content={content} />
 
-      <p>X likes</p>
+      <Text>X likes</Text>
       <LikeButton/>
-      <p>Posted XX/XX/XX XX:XX</p>
+      <Text>Posted XX/XX/XX XX:XX</Text>
     </View>
   );
 };
