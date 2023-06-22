@@ -6,7 +6,7 @@ const Title : FC = (props) => {
     const truncated = title.length > 30 ? title.substring(0, 30) + '...' : title;
     return (
         <View style={styles.content}>
-            <Text>{truncated}</Text>
+            <Text style={styles.text}>{truncated}</Text>
         </View>
     )
 }
@@ -15,6 +15,11 @@ export default Title;
 
 const styles = StyleSheet.create({
     content: {
-        
+        display: 'flex',
+        textAlign: 'center'
+    },
+    text: {
+        fontFamily: "Arial",
+        fontWeight: 'bold',
     }
 })

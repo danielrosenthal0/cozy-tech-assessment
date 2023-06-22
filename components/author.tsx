@@ -6,7 +6,7 @@ const Author : FC = (props) => {
     const {user} = props;
     return (
         <View style={styles.content}>
-            <Text>{user.name}</Text>
+            <Text style={styles.text}>{user.name}</Text>
             <AuthorAvatar avatar={user.avatar}></AuthorAvatar>
         </View>
         
@@ -17,7 +17,15 @@ export default Author;
 
 const styles = StyleSheet.create({
     content: {
+        
+        display: 'flex',
+        flexDirection: 'row',
+        padding: '8px',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    text: {
         fontFamily: "Arial",
-        fontWeight: 'bold'
+        fontWeight: 'bold',
     }
 })

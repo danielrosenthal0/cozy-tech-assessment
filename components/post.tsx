@@ -9,7 +9,7 @@ const Post: FC = (props) => {
   const { title, content, user, likes } = props;
   return (
     <View style={styles.content}>
-      <View>
+      <View style={styles.title}>
         <Author user={user}></Author>
         <Text>Posted XX/XX/XX XX:XX</Text>
       </View>
@@ -31,7 +31,14 @@ const styles = StyleSheet.create({
     margin: "1rem",
     borderRadius: 16,
     fontFamily: "Arial",
-    width: "50%",
+    width: "400px",
     alignItems: "center",
   },
+  title: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    margin: '24px',
+    padding: '12px'
+  }
 });
