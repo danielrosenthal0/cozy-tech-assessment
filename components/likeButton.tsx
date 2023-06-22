@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Button, StyleSheet, View } from "react-native";
 
 const LikeButton = () => {
   const [isLiked, setIsLiked] = useState(false);
@@ -15,10 +16,18 @@ const LikeButton = () => {
   };
 
   return (
-    <button onClick={handleLike}>
-      {isLiked ? "👍" : "👍"} ({likeCount})
-    </button>
+    <View style={styles.buttonContainer}>
+      <Button onPress={handleLike} title={`${isLiked ? "👍" : "👍"} (${likeCount})`} color="#878787" />
+    </View>
   );
 };
+
+const styles = StyleSheet.create({
+  buttonContainer: {
+    width: 50, // Adjust the width as per your preference
+    borderWidth: 0, // Remove the border
+    borderRadius: 15
+  },
+});
 
 export default LikeButton;

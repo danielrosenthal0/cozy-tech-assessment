@@ -5,7 +5,7 @@ import AuthorAvatar from "./authorAvatar";
 const Author : FC = (props) => {
     const {user} = props;
     return (
-        <View>
+        <View style={styles.content}>
             <Text>{user.name}</Text>
             <AuthorAvatar avatar={user.avatar}></AuthorAvatar>
         </View>
@@ -14,3 +14,10 @@ const Author : FC = (props) => {
 }
 
 export default Author;
+
+const styles = StyleSheet.create({
+    content: {
+        fontFamily: "Arial",
+        fontWeight: 'bold'
+    }
+})

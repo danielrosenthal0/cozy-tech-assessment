@@ -9,13 +9,15 @@ const Post: FC = (props) => {
   const { title, content, user, likes } = props;
   return (
     <View style={styles.content}>
-      <Author user={user}></Author>
+        <View>
+        <Author user={user}></Author>
+      <Text>Posted XX/XX/XX XX:XX</Text>
+        </View>
+     
       <Title title={title} />
       <Content content={content} />
-
-      <Text>X likes</Text>
       <LikeButton/>
-      <Text>Posted XX/XX/XX XX:XX</Text>
+      
     </View>
   );
 };
@@ -25,9 +27,12 @@ export default Post;
 const styles = StyleSheet.create({
   content: {
     display: "flex",
-    backgroundColor: "gray",
+    backgroundColor: "#b8b8b8",
     padding: "1rem",
     margin: "1rem",
     borderRadius: 16,
+    fontFamily: "Arial",
+    width: '50%',
+    alignItems: 'center'
   },
 });

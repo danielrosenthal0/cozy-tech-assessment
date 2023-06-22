@@ -15,7 +15,7 @@ const Pages = ({ totalPages, onPageChange, currentPage }) => {
       <Button
         key={page}
         onPress={() => onPageChange(page)}
-        color={currentPage === page ? styles.activeButton.color : styles.button.color}
+        color={currentPage === page ? "#28665d" : "#4abdab"}
         title={page.toString()}
       />
     );
@@ -27,14 +27,14 @@ const Pages = ({ totalPages, onPageChange, currentPage }) => {
         onPress={() => onPageChange(Math.max(currentPage - 1, 1))}
         disabled={currentPage === 1}
         title="&lt;"
-        color={styles.button.color}
+        color="#4abdab"
       />
       {pageButtons}
       <Button
         onPress={() => onPageChange(Math.min(currentPage + 1, totalPages))}
         disabled={currentPage === totalPages}
         title="&gt;"
-        color={styles.button.color}
+        color="#4abdab"
       />
     </View>
   );
@@ -48,10 +48,10 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   button: {
-    color: "#000000",
+    color: "#4abdab",
   },
   activeButton: {
-    color: "#ff0000",
+    color: "#28665d",
   },
 });
 
