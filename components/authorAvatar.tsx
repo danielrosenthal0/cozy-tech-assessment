@@ -8,4 +8,4 @@ const AuthorAvatar : FC = (props) => {
         </View>
     )
 }
-export defualt AuthorAvatar;
+export default AuthorAvatar;
