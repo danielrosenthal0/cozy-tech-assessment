@@ -2,19 +2,19 @@ import { FC } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import Title from "./title";
 import Content from "./content";
+import Author from "./author";
 
 const Post: FC = (props) => {
+    const {title, content, user, likes} = props;
   return (
-    <View>
+    
       <View style={styles.content}>
-        <View style={styles.title}>
-          <Title title={props.title} />
-        </View>
-        <View style={styles.content}>
-          <Content content={props.content} />
-        </View>
+      <h1>{title}</h1>
+      <p>{content}</p>
+      {/* <p>{user.name}</p> */}
+      <Author user={user.name}></Author>
+      <p>{likes.id}</p>
       </View>
-    </View>
   );
 };
 

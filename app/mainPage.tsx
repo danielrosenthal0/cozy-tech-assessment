@@ -15,16 +15,30 @@ const MainPage: FC = () => {
       .catch((error) => console.error(error));
   }, []);
 
+  useEffect(() => {
+    fetch("http://localhost:3000/users")
+      .then((response) => response.json())
+      .then((postData) => setUsers(postData))
+      .catch((error) => console.error(error));
+  }, []);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/likes")
+      .then((response) => response.json())
+      .then((postData) => setLikes(postData))
+      .catch((error) => console.error(error));
+  }, []);
+
+
   return (
     <View style={styles.content}>
-      {posts.map((post) => (
-        <Post
-          key={post.id}
-          title={post.title}
-          content={post.content}
-          userId={post.userId}
-        />
-      ))}
+        {posts.map((post) => {
+            const user = users.find((user) => user.id === post.userId);
+            const postLikes = likes.filter((like) => like.postId === post.id);
+            return (
+                <Post key={post.id} title={post.title} content={post.content} user={user} likes={postLikes}></Post>
+            )
+        })}
     </View>
   );
 };
