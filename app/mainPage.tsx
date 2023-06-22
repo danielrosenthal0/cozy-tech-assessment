@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 import Post from "../components/post";
 import Pages from "../components/pages";
 
+
 const MainPage: FC = () => {
   const [posts, setPosts] = useState([]);
   const [users, setUsers] = useState([]);
@@ -54,13 +55,9 @@ const MainPage: FC = () => {
           ></Post>
         );
       })}
-      {Array.from({ length: totalPages }, (_, index) => (
-        <button key={index} onClick={() => handlePageChange(index + 1)}>
-          {index + 1}
-        </button>
-      ))}
+      <Pages totalPages={totalPages} onPageChange={handlePageChange} currentPage={currentPage} />
 
-      <Pages page={currentPage} total={totalPages} />
+     
     </View>
   );
 };
