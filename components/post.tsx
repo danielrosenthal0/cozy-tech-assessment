@@ -5,15 +5,15 @@ import Content from "./content";
 import Author from "./author";
 
 const Post: FC = (props) => {
-    const {title, content, user, likes} = props;
+  const { title, content, user, likes } = props;
   return (
-    
-      <View style={styles.content}>
-      <Title title={title}/>
-      <Content content={content}/>
+    <View style={styles.content}>
       <Author user={user}></Author>
+      <Title title={title} />
+      <Content content={content} />
+
       <p>{likes.id}</p>
-      </View>
+    </View>
   );
 };
 
