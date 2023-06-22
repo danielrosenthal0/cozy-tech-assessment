@@ -11,8 +11,7 @@ const Post: FC = (props) => {
       <View style={styles.content}>
       <h1>{title}</h1>
       <p>{content}</p>
-      {/* <p>{user.name}</p> */}
-      <Author user={user.name}></Author>
+      <Author user={user}></Author>
       <p>{likes.id}</p>
       </View>
   );
