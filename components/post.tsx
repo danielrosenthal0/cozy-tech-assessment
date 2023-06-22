@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 import Title from "./title";
 import Content from "./content";
 import Author from "./author";
+import LikeButton from "./likeButton";
 
 const Post: FC = (props) => {
   const { title, content, user, likes } = props;
@@ -12,7 +13,9 @@ const Post: FC = (props) => {
       <Title title={title} />
       <Content content={content} />
 
-      <p>{likes.id}</p>
+      <p>X likes</p>
+      <LikeButton/>
+      <p>Posted XX/XX/XX XX:XX</p>
     </View>
   );
 };

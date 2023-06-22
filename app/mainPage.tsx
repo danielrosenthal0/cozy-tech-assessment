@@ -42,6 +42,7 @@ const MainPage: FC = () => {
   };
   return (
     <View style={styles.content}>
+        <h1>Recent posts</h1>
       {currPosts.map((post) => {
         const user = users.find((user) => user.id === post.userId);
         const postLikes = likes.filter((like) => like.postId === post.id);

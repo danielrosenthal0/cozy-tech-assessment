@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const Pages = ({ totalPages, onPageChange, currentPage }) => {
   const pagesDisplayed = 5;
   const pageButtons = [];
@@ -42,3 +43,4 @@ const Pages = ({ totalPages, onPageChange, currentPage }) => {
 };
 
 export default Pages;
+
