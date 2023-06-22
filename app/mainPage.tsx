@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 import Post from "../components/post";
 import Pages from "../components/pages";
 
+
 const MainPage: FC = () => {
   const [posts, setPosts] = useState([]);
   const [users, setUsers] = useState([]);
@@ -36,9 +37,9 @@ const MainPage: FC = () => {
   const currPosts = posts.slice(indexFirst, indexLast);
   const totalPages = Math.ceil(posts.length / postsPerPage);
 
-  const handPageChange = (page: number) => {
+  const handlePageChange = (page: number) => {
     setCurrentPage(page);
-  }
+  };
   return (
     <View style={styles.content}>
       {currPosts.map((post) => {
@@ -54,7 +55,9 @@ const MainPage: FC = () => {
           ></Post>
         );
       })}
-      <Pages page={currentPage} total={totalPages}/>
+      <Pages totalPages={totalPages} onPageChange={handlePageChange} currentPage={currentPage} />
+
+     
     </View>
   );
 };
