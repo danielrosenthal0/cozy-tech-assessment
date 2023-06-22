@@ -13,7 +13,7 @@ export default AuthorAvatar;
 
 const styles = StyleSheet.create({
     content: {
-        width: '20%',
+        width: '75px',
         padding: '10px'
     }
 })

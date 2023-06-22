@@ -16,7 +16,7 @@ export default Content;
 const styles = StyleSheet.create({
     content: {
         display: 'flex',
-        textAlign: 'left'
+        textAlign: 'center'
     },
     text: {
         fontFamily: "Arial",

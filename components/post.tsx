@@ -6,12 +6,28 @@ import Author from "./author";
 import LikeButton from "./likeButton";
 
 const Post: FC = (props) => {
-  const { title, content, user, likes } = props;
+  const { title, content, user, likes, postId } = props;
+
+  const getPostedTime = (postId) => {
+    const currentTime = new Date();
+    const randomMinutes = postId * 10; 
+    const postedTime = new Date(currentTime.getTime() - randomMinutes * 60000);
+    const timeDifference = Math.floor((currentTime.getTime() - postedTime.getTime()) / 60000);
+    
+    if (timeDifference < 60) {
+      return `Posted ${timeDifference} minutes ago`;
+    } else {
+      const hours = Math.floor(timeDifference / 60);
+      return `Posted ${hours} hours ago`;
+    }
+  };
+
+
   return (
     <View style={styles.content}>
       <View style={styles.title}>
         <Author user={user}></Author>
-        <Text>Posted XX/XX/XX XX:XX</Text>
+        <Text style={styles.postedText}>{getPostedTime(postId)}</Text>
       </View>
 
       <Title title={title} />
@@ -40,5 +56,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     margin: '24px',
     padding: '12px'
+  },
+  postedText: {
+    width: '100px'
   }
 });
