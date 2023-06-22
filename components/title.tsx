@@ -1,10 +1,10 @@
 import { FC } from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-const Title : FC = () => {
+const Title : FC = (props) => {
     return (
         <View>
-            <Text>Title</Text>
+            <Text>{props.title}</Text>
         </View>
     )
 }
