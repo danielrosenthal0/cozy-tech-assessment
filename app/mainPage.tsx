@@ -53,6 +53,7 @@ const MainPage: FC = () => {
             content={post.content}
             user={user}
             likes={postLikes}
+            postId={post.id}
           ></Post>
         );
       })}

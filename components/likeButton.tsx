@@ -26,7 +26,8 @@ const styles = StyleSheet.create({
   buttonContainer: {
     width: 50, // Adjust the width as per your preference
     borderWidth: 0, // Remove the border
-    borderRadius: 15
+    borderRadius: 16,
+    margin: '12px'
   },
 });
 
