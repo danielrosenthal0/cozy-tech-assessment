@@ -9,8 +9,8 @@ const Post: FC = (props) => {
   return (
     
       <View style={styles.content}>
-      <h1>{title}</h1>
-      <p>{content}</p>
+      <Title title={title}/>
+      <Content content={content}/>
       <Author user={user}></Author>
       <p>{likes.id}</p>
       </View>

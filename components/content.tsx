@@ -2,9 +2,11 @@ import { FC } from "react";
 import { StyleSheet, Text, View } from "react-native";
 
 const Content : FC = (props) => {
+    const {content} = props;
+    const truncated = content.length > 100 ? content.substring(0, 100) + '...' : content;
     return (
         <View>
-            <Text>{props.content}</Text>
+            <Text>{truncated}</Text>
         </View>
     )
 }
